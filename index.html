@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal E-Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-lg rounded-b-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Sapavat Tharun</a>
+            <div class="space-x-4 sm:space-x-6">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300">Experience</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center py-20 md:py-32">
+            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-purple-500 shadow-xl">
+                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=ST" alt="Your Profile Picture" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4">Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Sapavat Tharun</span></h1>
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">A passionate full stack developer and dedicated problem solver, I create robust and scalable digital solutions. Let's build something amazing together!</p>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-white">About Me</h2>
+            <p class="text-md sm:text-lg leading-relaxed text-gray-300">
+                I am a passionate Full Stack Developer with a knack for turning complex challenges into elegant, functional web applications. My journey in technology is driven by a constant desire to build and innovate, focusing on creating seamless user experiences and robust, scalable backend systems. I thrive on the entire development lifecycle, from initial concept and design to deployment and optimization. I believe that every problem has a solution waiting to be discovered, and I am dedicated to finding it through logical thinking and clean, efficient code.
+            </p>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-white">Work Experience</h2>
+            <div class="text-center text-gray-300">
+                <p class="text-lg mb-4">
+                    I am a highly motivated and skilled individual with a strong foundation in full-stack web development.
+                    While I am actively seeking my first professional opportunity, I have applied my expertise to various
+                    personal projects, showcasing my ability to solve complex problems and build scalable applications.
+                </p>
+                <p class="text-lg">
+                    My dedication to continuous learning and my passion for building impactful solutions make me a valuable
+                    asset to any team. I am eager to contribute my skills and grow within a professional environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">HTML & CSS</h3>
+                    <p class="text-gray-400 text-sm">Building structured content and elegant designs.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">JavaScript</h3>
+                    <p class="text-gray-400 text-sm">Dynamic client-side scripting and interactivity.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">React</h3>
+                    <p class="text-gray-400 text-sm">Creating modern, component-based user interfaces.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">Node.js</h3>
+                    <p class="text-gray-400 text-sm">Building scalable, server-side applications.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">Express.js</h3>
+                    <p class="text-gray-400 text-sm">Developing robust and fast web APIs.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">MongoDB</h3>
+                    <p class="text-gray-400 text-sm">Managing flexible, NoSQL databases.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">Git</h3>
+                    <p class="text-gray-400 text-sm">Version control for collaborative projects.</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
+                    <h3 class="font-bold text-lg mb-2">GitHub</h3>
+                    <p class="text-gray-400 text-sm">Showcasing code and collaborating on projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="my-16 md:my-24">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">My Project</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl transition-transform hover:scale-105 duration-300">
+                    <img src="https://placehold.co/600x400/2D3748/F7FAFC?text=ShopBag" alt="ShopBag Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-white">ShopBag</h3>
+                        <p class="text-gray-400 mb-4">An e-commerce web application currently under development. This project showcases full-stack development skills, with a focus on creating a smooth and secure shopping experience.</p>
+                        <a href="https://github.com/TharunSapavat/ShopBag" class="inline-block bg-purple-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-purple-700 transition-colors duration-300" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">Connect with Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/xpwjnbky" method="POST" class="max-w-xl mx-auto space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-300 mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-300 mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-full hover:bg-purple-700 transition-colors duration-300 shadow-lg">Send Message</button>
+            </form>
+            <!-- Message container for form submission feedback -->
+            <div id="contact-message" class="mt-4 text-center hidden"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-6 text-gray-500 text-sm">
+        <div class="flex justify-center space-x-4 mb-4">
+            <a href="https://github.com/TharunSapavat" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tharun-s-41091a322/" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="mailto:sapavattharun06@gmail.com" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Sapavat Tharun. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.getElementById(targetId.substring(1));
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, /* Adjust for fixed header height */
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handling with Formspree
+            const contactForm = document.getElementById('contact-form');
+            const contactMessage = document.getElementById('contact-message');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+
+                contactMessage.textContent = 'Sending message...';
+                contactMessage.classList.remove('hidden', 'text-red-500', 'bg-red-100');
+                contactMessage.classList.add('text-green-500', 'bg-green-100', 'p-4', 'rounded-lg');
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        contactMessage.textContent = 'Message sent! I will get back to you shortly.';
+                        setTimeout(() => {
+                            contactMessage.classList.add('hidden');
+                            form.reset();
+                        }, 2500);
+                    } else {
+                        contactMessage.textContent = 'There was an error. Please try again later.';
+                        contactMessage.classList.remove('text-green-500', 'bg-green-100');
+                        contactMessage.classList.add('text-red-500', 'bg-red-100');
+                        setTimeout(() => {
+                            contactMessage.classList.add('hidden');
+                        }, 2500);
+                    }
+                } catch (error) {
+                    contactMessage.textContent = 'Network error. Please try again.';
+                    contactMessage.classList.remove('text-green-500', 'bg-green-100');
+                    contactMessage.classList.add('text-red-500', 'bg-red-100');
+                    setTimeout(() => {
+                        contactMessage.classList.add('hidden');
+                    }, 2500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
