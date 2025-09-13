@@ -4,32 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal E-Portfolio</title>
+    <!-- Google Fonts: Poppins for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        :root {
+            --bg-color: #f3f4f6; /* Light gray */
+            --primary-color: #4c51bf; /* Indigo */
+            --secondary-color: #8b5cf6; /* Violet */
         }
-        /* Custom scroll-behavior for smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(at 0% 0%, rgba(76, 81, 191, 0.05) 0, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.05) 0, transparent 50%);
+            color: #333;
+        }
+
+        /* Hero spotlight effect */
+        .spotlight-container {
+            position: relative;
+            overflow: hidden;
+            background-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(76, 81, 191, 0.05) 0, transparent 50%);
+            transition: background-image 0.1s ease-out;
+        }
+        
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Active navigation link styling */
+        .active-nav {
+            color: #4c51bf !important; /* Use primary color */
+            font-weight: 600; /* Bolder */
+            border-bottom: 2px solid #4c51bf; /* Underline effect */
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200">
+<body class="bg-gray-100 text-gray-900">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md shadow-lg rounded-b-xl">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-lg rounded-b-xl">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Sapavat Tharun</a>
+            <a href="#" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Sapavat Tharun</a>
             <div class="space-x-4 sm:space-x-6">
-                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-300">Experience</a>
-                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-300">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-300">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-indigo-900 transition-colors duration-300">About</a>
+                <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-900 transition-colors duration-300">Experience</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-900 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-900 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-900 transition-colors duration-300">Contact</a>
             </div>
         </nav>
     </header>
@@ -37,26 +72,25 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Hero Section -->
-        <section class="text-center py-20 md:py-32">
-            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-purple-500 shadow-xl">
-                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=ST" alt="Your Profile Picture" class="w-full h-full object-cover">
+        <section class="text-center py-20 md:py-32 relative overflow-hidden spotlight-container">
+            <div class="relative z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600">Sapavat Tharun</span></h1>
+                <p class="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">A passionate full stack developer and dedicated problem solver, I create robust and scalable digital solutions. Let's build something amazing together!</p>
             </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-4">Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Sapavat Tharun</span></h1>
-            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">A passionate full stack developer and dedicated problem solver, I create robust and scalable digital solutions. Let's build something amazing together!</p>
         </section>
 
         <!-- About Me Section -->
-        <section id="about" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-white">About Me</h2>
-            <p class="text-md sm:text-lg leading-relaxed text-gray-300">
+        <section id="about" class="my-16 md:my-24 bg-white rounded-2xl p-8 shadow-xl animated-section">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-gray-900">About Me</h2>
+            <p class="text-md sm:text-lg leading-relaxed text-gray-800">
                 I am a passionate Full Stack Developer with a knack for turning complex challenges into elegant, functional web applications. My journey in technology is driven by a constant desire to build and innovate, focusing on creating seamless user experiences and robust, scalable backend systems. I thrive on the entire development lifecycle, from initial concept and design to deployment and optimization. I believe that every problem has a solution waiting to be discovered, and I am dedicated to finding it through logical thinking and clean, efficient code.
             </p>
         </section>
 
         <!-- Work Experience Section -->
-        <section id="experience" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-white">Work Experience</h2>
-            <div class="text-center text-gray-300">
+        <section id="experience" class="my-16 md:my-24 bg-white rounded-2xl p-8 shadow-xl animated-section">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-gray-900">Work Experience</h2>
+            <div class="text-center text-gray-800">
                 <p class="text-lg mb-4">
                     I am a highly motivated and skilled individual with a strong foundation in full-stack web development.
                     While I am actively seeking my first professional opportunity, I have applied my expertise to various
@@ -70,85 +104,132 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="my-16 md:my-24">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">My Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">HTML & CSS</h3>
-                    <p class="text-gray-400 text-sm">Building structured content and elegant designs.</p>
+        <section id="skills" class="my-16 md:my-24 animated-section">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-900">My Skills</h2>
+            <div class="space-y-8">
+                <!-- Programming Languages -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-gray-800">Technical Languages</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- Skill Card: C -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">C</h4>
+                            <p class="text-gray-700 text-sm">Building low-level and high-performance applications.</p>
+                        </div>
+                        <!-- Skill Card: C++ -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">C++</h4>
+                            <p class="text-gray-700 text-sm">Object-oriented programming and robust software design.</p>
+                        </div>
+                        <!-- Skill Card: Java -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">Java</h4>
+                            <p class="text-gray-700 text-sm">Developing platform-independent software for enterprise applications.</p>
+                        </div>
+                        <!-- Skill Card: Python -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">Python</h4>
+                            <p class="text-gray-700 text-sm">Developing versatile scripts and applications for various domains.</p>
+                        </div>
+                        <!-- Skill Card: SQL -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">SQL</h4>
+                            <p class="text-gray-700 text-sm">Managing and querying relational databases.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">JavaScript</h3>
-                    <p class="text-gray-400 text-sm">Dynamic client-side scripting and interactivity.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">React</h3>
-                    <p class="text-gray-400 text-sm">Creating modern, component-based user interfaces.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">Node.js</h3>
-                    <p class="text-gray-400 text-sm">Building scalable, server-side applications.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">Express.js</h3>
-                    <p class="text-gray-400 text-sm">Developing robust and fast web APIs.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">MongoDB</h3>
-                    <p class="text-gray-400 text-sm">Managing flexible, NoSQL databases.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">Git</h3>
-                    <p class="text-gray-400 text-sm">Version control for collaborative projects.</p>
-                </div>
-                <!-- Skill Card -->
-                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg transition-transform hover:scale-105 duration-300">
-                    <h3 class="font-bold text-lg mb-2">GitHub</h3>
-                    <p class="text-gray-400 text-sm">Showcasing code and collaborating on projects.</p>
+
+                <!-- Web Technologies -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-gray-800">Web Technologies</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                         <!-- Skill Card: HTML & CSS -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">HTML & CSS</h4>
+                            <p class="text-gray-700 text-sm">Building structured content and elegant designs.</p>
+                        </div>
+                        <!-- Skill Card: JavaScript -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">JavaScript</h4>
+                            <p class="text-gray-700 text-sm">Dynamic client-side scripting and interactivity.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">React</h4>
+                            <p class="text-gray-700 text-sm">Creating modern, component-based user interfaces.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">Node.js</h4>
+                            <p class="text-gray-700 text-sm">Building scalable, server-side applications.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">Express.js</h4>
+                            <p class="text-gray-700 text-sm">Developing robust and fast web APIs.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">MongoDB</h4>
+                            <p class="text-gray-700 text-sm">Managing flexible, NoSQL databases.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">Git</h4>
+                            <p class="text-gray-700 text-sm">Version control for collaborative projects.</p>
+                        </div>
+                        <!-- Skill Card -->
+                        <div class="bg-white rounded-xl p-6 text-center shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-200/50">
+                            <h4 class="font-bold text-lg mb-2 text-gray-900">GitHub</h4>
+                            <p class="text-gray-700 text-sm">Showcasing code and collaborating on projects.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="my-16 md:my-24">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">My Project</h2>
+        <section id="projects" class="my-16 md:my-24 animated-section">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-900">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-xl transition-transform hover:scale-105 duration-300">
-                    <img src="https://placehold.co/600x400/2D3748/F7FAFC?text=ShopBag" alt="ShopBag Project" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <img src="image.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2D3748/F7FAFC?text=EduAxis'" alt="EduAxis Project" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-white">ShopBag</h3>
-                        <p class="text-gray-400 mb-4">An e-commerce web application currently under development. This project showcases full-stack development skills, with a focus on creating a smooth and secure shopping experience.</p>
-                        <a href="https://github.com/TharunSapavat/ShopBag" class="inline-block bg-purple-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-purple-700 transition-colors duration-300" target="_blank">View Project</a>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">EduAxis</h3>
+                        <p class="text-gray-700 mb-4">This School Management System is a comprehensive platform designed to streamline and manage school operations efficiently. The system includes features for administrators, teachers, students, and parents, providing a unified solution for school management.</p>
+                        <a href=" https://github.com/yashwanth04112005/new_eduAxis" class="inline-block bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-indigo-700 transition-colors duration-300" target="_blank">View Project</a>
+                    </div>
+                </div>
+                  <!-- Project Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <img src="Shopbag_thumbmail.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2D3748/F7FAFC?text=ShopBag'" alt="ShopBag Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">ShopBag</h3>
+                        <p class="text-gray-700 mb-4">An e-commerce web application currently under development. This project showcases full-stack development skills, with a focus on creating a smooth and secure shopping experience.</p>
+                        <a href="https://github.com/TharunSapavat/ShopBag" class="inline-block bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-indigo-700 transition-colors duration-300" target="_blank">View Project</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="my-16 md:my-24 bg-gray-800 rounded-2xl p-8 shadow-xl">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-white">Connect with Me</h2>
+        <section id="contact" class="my-16 md:my-24 bg-white rounded-2xl p-8 shadow-xl animated-section">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-900">Connect with Me</h2>
             <form id="contact-form" action="https://formspree.io/f/xpwjnbky" method="POST" class="max-w-xl mx-auto space-y-6">
                 <div>
-                    <label for="name" class="block text-gray-300 mb-2">Name</label>
-                    <input type="text" id="name" name="name" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required>
+                    <label for="name" class="block text-gray-700 mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:border-indigo-500 transition-colors duration-300" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-gray-300 mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required>
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:border-indigo-500 transition-colors duration-300" required>
                 </div>
                 <div>
-                    <label for="message" class="block text-gray-300 mb-2">Message</label>
-                    <textarea id="message" name="message" rows="5" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md py-3 px-4 focus:outline-none focus:border-purple-500 transition-colors duration-300" required></textarea>
+                    <label for="message" class="block text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full bg-gray-100 text-gray-900 border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:border-indigo-500 transition-colors duration-300" required></textarea>
                 </div>
-                <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-full hover:bg-purple-700 transition-colors duration-300 shadow-lg">Send Message</button>
+                <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-full hover:bg-indigo-700 transition-colors duration-300 shadow-lg">Send Message</button>
             </form>
             <!-- Message container for form submission feedback -->
             <div id="contact-message" class="mt-4 text-center hidden"></div>
@@ -156,15 +237,15 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-center py-6 text-gray-500 text-sm">
+    <footer class="bg-gray-200 text-center py-6 text-gray-700 text-sm">
         <div class="flex justify-center space-x-4 mb-4">
-            <a href="https://github.com/TharunSapavat" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="https://github.com/TharunSapavat" target="_blank" class="text-gray-700 hover:text-indigo-900 transition-colors duration-300">
                 <i class="fab fa-github fa-2x"></i>
             </a>
-            <a href="https://www.linkedin.com/in/tharun-s-41091a322/" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/tharun-s-41091a322/" target="_blank" class="text-gray-700 hover:text-indigo-900 transition-colors duration-300">
                 <i class="fab fa-linkedin fa-2x"></i>
             </a>
-            <a href="mailto:sapavattharun06@gmail.com" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300">
+            <a href="mailto:sapavattharun06@gmail.com" target="_blank" class="text-gray-700 hover:text-indigo-900 transition-colors duration-300">
                 <i class="fas fa-envelope fa-2x"></i>
             </a>
         </div>
@@ -190,6 +271,67 @@
                         });
                     }
                 });
+            });
+
+            // Intersection Observer for fade-in animations
+            const animatedSections = document.querySelectorAll('.animated-section');
+            const animatedObserverOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const animatedObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, animatedObserverOptions);
+
+            animatedSections.forEach(section => {
+                animatedObserver.observe(section);
+            });
+
+            // Intersection Observer for navigation highlighting
+            const sections = document.querySelectorAll('main section[id]');
+            const navObserverOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px', // Highlight when section is in the middle of the viewport
+                threshold: 0
+            };
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`nav a[href="#${id}"]`);
+
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links first
+                        navLinks.forEach(link => link.classList.remove('active-nav'));
+                        // Add active class to the current link
+                        if (navLink) {
+                            navLink.classList.add('active-nav');
+                        }
+                    }
+                });
+            }, navObserverOptions);
+
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+
+            // Hero spotlight effect on mouse move
+            const heroSection = document.querySelector('.spotlight-container');
+
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                heroSection.style.setProperty('--x', `${x}px`);
+                heroSection.style.setProperty('--y', `${y}px`);
             });
 
             // Form submission handling with Formspree
@@ -234,6 +376,7 @@
                     contactMessage.classList.add('text-red-500', 'bg-red-100');
                     setTimeout(() => {
                         contactMessage.classList.add('hidden');
+                        form.reset();
                     }, 2500);
                 }
             });
